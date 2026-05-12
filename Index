@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Board Game Night RSVP</title>
+  <link rel="stylesheet" href="styles.css?v=5">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="topbar">
+      <div>
+        <p class="eyebrow">Board game group</p>
+        <h1>Game Night RSVP</h1>
+      </div>
+      <div class="status-strip" aria-label="event capacity">
+        <span><strong id="seatCount">0</strong>/20 seats</span>
+        <span><strong id="waitCount">0</strong>/10 waitlist</span>
+      </div>
+    </section>
+
+    <section class="notice" id="banNotice" hidden>
+      <div>
+        <strong>RSVP paused</strong>
+        <p id="banText"></p>
+      </div>
+      <button class="ghost-button" id="banEmailButton" type="button">Email host</button>
+      <button class="primary-button" id="banPayButton" type="button">Pay $10</button>
+    </section>
+
+    <section class="name-panel" aria-label="attendee sign in">
+      <div class="person-fields">
+        <div>
+          <label for="attendeeName">Your name</label>
+          <input id="attendeeName" type="text" autocomplete="name" placeholder="Type your name to RSVP">
+        </div>
+        <div>
+          <label for="attendeeEmail">Personal email</label>
+          <input id="attendeeEmail" type="email" autocomplete="email" placeholder="Personal email only">
+        </div>
+      </div>
+      <div class="name-row person-actions">
+        <p class="privacy-note">Email stays private and is only used for no-show blocks.</p>
+        <button class="ghost-button" id="clearMyRsvp" type="button">Clear my RSVP</button>
+      </div>
+    </section>
+
+    <section class="layout-grid">
+      <div class="tables-area">
+        <div class="section-heading">
+          <h2>Tables</h2>
+          <p>Each table has 4 seats. Tables 4 and 5 are attendee choice.</p>
+        </div>
+        <div class="table-grid" id="tableGrid"></div>
+      </div>
+
+      <aside class="side-panel">
+        <div class="section-heading">
+          <h2>Waitlist</h2>
+          <p>Caps at 10 people.</p>
+        </div>
+        <ol class="waitlist" id="waitlist"></ol>
+        <button class="secondary-button full" id="joinWaitlist" type="button">Join waitlist</button>
+
+        <div class="host-tools">
+          <div class="section-heading">
+            <h2>Host Tools</h2>
+            <p>Set hosted games and manage no-shows.</p>
+          </div>
+          <div class="host-game-list" id="hostGameList"></div>
+          <label for="noShowName">Mark no-show</label>
+          <div class="host-row">
+            <select id="noShowName"></select>
+            <button class="danger-button" id="markNoShow" type="button">Block 4 weeks</button>
+          </div>
+          <label for="manualBanEmail">Block by personal email</label>
+          <div class="host-row">
+            <input id="manualBanEmail" type="email" autocomplete="off" placeholder="email@example.com">
+            <button class="danger-button" id="blockEmail" type="button">Block 4 weeks</button>
+          </div>
+          <p class="host-note">Email blocks expire automatically after 4 weeks.</p>
+          <button class="ghost-button full" id="resetDemo" type="button">Reset all RSVPs</button>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <dialog id="messageDialog">
+    <form method="dialog" class="dialog-card">
+      <h2 id="messageTitle">Heads up</h2>
+      <p id="messageText"></p>
+      <menu>
+        <button class="primary-button" value="ok" type="submit">OK</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="app.js?v=5"></script>
+</body>
+</html>
