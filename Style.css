@@ -1,0 +1,58 @@
+Last login: Sat Apr 11 15:40:49 on console
+cd /Users/maccheese/Documents/Codex/2026-05-11/do-i-explain-what-i-want && /usr/bin/vim /Users/maccheese/Documents/Codex/2026-05-11/do-i-explain-what-i-want/styles.css
+maccheese@Karens-MacBook-Air ~ % cd /Users/maccheese/Documents/Codex/2026-05-11/do-i-explain-what-i-want && /usr/bin/vim /Users/maccheese/Documents/Codex/2026-05-11/do-i-explain-what-i-want/styles.css
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.name-panel,
+.side-panel,
+.table-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.notice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding: 14px;
+  border-color: rgba(185, 70, 70, 0.45);
+}
+
+.notice p {
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.name-panel {
+  padding: 16px;
+  margin-bottom: 18px;
+}
+
+.person-fields {
+                                                                                                                
